@@ -20,7 +20,8 @@ class WeatherRepositoryImplementation(
                 cityLatitude = cityLatitude,
                 cityLongitude = cityLongitude,
                 excludeFields = "minutely,hourly",
-                apiKey = apiKey
+                apiKey = apiKey,
+                metricUnit = "metric"
             )
             if (response.isSuccessful && response.body() != null) {
                 ResultData.Success(data = response.body()!!)

@@ -12,6 +12,7 @@ interface WeatherService {
         @Query("lat") cityLatitude: Double,
         @Query("lon") cityLongitude: Double,
         @Query("exclude") excludeFields: String,
-        @Query("appid") apiKey: String
+        @Query("appid") apiKey: String,
+        @Query("units") metricUnit : String
     ): Response<NetworkCity>
 }
