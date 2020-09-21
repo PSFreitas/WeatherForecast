@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 Properties properties = new Properties()
 properties.load(rootProject.file("local.properties").newInputStream())
@@ -32,6 +33,10 @@ android {
         sourceCompatibility = "8"
     }
 
+    buildFeatures {
+        dataBinding true
+    }
+
 }
 
 
@@ -52,6 +57,7 @@ dependencies {
 
     implementation 'com.google.android.material:material:1.2.1'
     implementation "androidx.constraintlayout:constraintlayout:2.0.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0-alpha07"
 
 
 }
