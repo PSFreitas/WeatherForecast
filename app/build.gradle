@@ -2,6 +2,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+Properties properties = new Properties()
+properties.load(rootProject.file("local.properties").newInputStream())
+def weatherApiKey = properties["weatherApiKey"]
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
@@ -12,7 +16,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        buildConfigField "String", "WEATHER_API_KEY", "\"$weatherApiKey\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -22,7 +26,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
+
 }
+
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
