@@ -31,11 +31,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     override fun onResume() {
         super.onResume()
         weatherViewModel.getCurrentAndForecastWeather(
-            3.0445758,
-            -60.0021231
+            -3.0445758,
+            -60.002123113
         )
     }
 }
