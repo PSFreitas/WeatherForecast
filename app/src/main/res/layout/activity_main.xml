@@ -38,6 +38,7 @@
 
                 <TextView
                     android:id="@+id/textView_city_temperature"
+                    formatCelsius="@{viewModel.cityWeather.data.currentWeather.temperatureInCelsius}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -58,6 +59,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:textAllCaps="true"
                     android:textColor="@android:color/black"
+                    android:text="@{viewModel.cityWeather.data.timeZone}"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toTopOf="@id/textView_city_feels_like_temperature"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -72,6 +74,7 @@
                     android:layout_height="wrap_content"
                     android:textAllCaps="true"
                     android:textColor="@android:color/black"
+                    formatFeelsLikeTemperature="@{viewModel.cityWeather.data.currentWeather.feelsLikeTemperatureInCelsius}"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toTopOf="@id/textView_city_weather_description"
                     app:layout_constraintStart_toStartOf="@id/textView_city_name"
@@ -85,6 +88,7 @@
                     android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="12sp"
+                    android:text="@{viewModel.cityWeather.data.currentWeather.weatherDescription[0].description}"
                     app:layout_constraintBottom_toBottomOf="@+id/textView_city_temperature"
                     app:layout_constraintStart_toStartOf="@id/textView_city_feels_like_temperature"
                     app:layout_constraintTop_toBottomOf="@id/textView_city_feels_like_temperature"
