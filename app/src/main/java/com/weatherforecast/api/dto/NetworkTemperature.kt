@@ -3,10 +3,10 @@ package com.weatherforecast.api.dto
 import com.google.gson.annotations.SerializedName
 
 data class NetworkTemperature(
-    @SerializedName("day") val dayTemperatureInFahrenheit: Double,
-    @SerializedName("min") val minTemperatureInFahrenheit: Double,
-    @SerializedName("max") val maxTemperatureInFahrenheit: Double,
-    @SerializedName("night") val nightTemperatureInFahrenheit: Double,
-    @SerializedName("eve") val eveningTemperatureInFahrenheit: Double,
-    @SerializedName("morn") val morningTemperatureInFahrenheit: Double
+    @SerializedName("day") val dayTemperatureInCelsius: Double,
+    @SerializedName("min") val minTemperatureInCelsius: Double,
+    @SerializedName("max") val maxTemperatureInCelsius: Double,
+    @SerializedName("night") val nightTemperatureInCelsius: Double,
+    @SerializedName("eve") val eveningTemperatureInCelsius: Double,
+    @SerializedName("morn") val morningTemperatureInCelsius: Double
 )
