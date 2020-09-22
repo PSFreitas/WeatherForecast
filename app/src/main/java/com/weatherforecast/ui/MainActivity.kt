@@ -40,18 +40,19 @@ class MainActivity : AppCompatActivity() {
             it.viewModel = weatherViewModel
             it.root
         }
-    }
 
-
-    override fun onResume() {
-        super.onResume()
+        fetchCurrenAndForecastWeather()
         setupRecyclerView()
         setupObservers()
+    }
+
+    private fun fetchCurrenAndForecastWeather() {
         weatherViewModel.getCurrentAndForecastWeather(
             -3.0445758,
             -60.002123113
         )
     }
+
 
     private fun setupObservers() {
         weatherViewModel.cityWeather.observe(
