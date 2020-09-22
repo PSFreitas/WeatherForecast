@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
     private val forecastAdapter = ForecastAdapter(mutableListOf())
 
     private val weatherViewModel by lazy {
-        val weatherRepository = WeatherRepositoryImplementation()
+        val weatherRepository = WeatherRepositoryImplementation(
+            this
+        )
         ViewModelProvider(
             this,
             WeatherViewModelFactory(weatherRepository)

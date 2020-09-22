@@ -1,5 +1,6 @@
 package com.weatherforecast.repository
 
+import android.content.Context
 import com.weatherforecast.api.WeatherApi
 import com.weatherforecast.api.WeatherService
 import com.weatherforecast.api.dto.NetworkCity
@@ -7,7 +8,8 @@ import com.weatherforecast.utils.ResultData
 import kotlinx.coroutines.coroutineScope
 
 class WeatherRepositoryImplementation(
-    val weatherService: WeatherService = WeatherApi().weatherService
+    val context: Context,
+    val weatherService: WeatherService = WeatherApi(context).weatherService
 ) : WeatherRepository {
 
     override suspend fun getCurrentAndForecastWeather(
