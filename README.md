@@ -16,7 +16,7 @@ Este projeto tem como objetivo a prática dos seguintes conceitos e tecnologias:
 
 ### Requisitos
 
-- [ ] Utilize qualquer API climática, requisitando o clima de qualquer localização escolhida.
-- [ ] Crie uma UI para exibir o clima dos próximos dias da localização escolhida.
-- [ ] Como o clima não é algo que muda tão frequentemente, não é necessário requisitar o clima constantemente, sendo assim podemos economizar os dados móveis, utilize cache para resolver este problema.
-- [ ] A aplicação deve funcionar em modo Retrato e Paisagem
+- [x] Utilize qualquer API climática, requisitando o clima de qualquer localização escolhida.
+- [x] Crie uma UI para exibir o clima dos próximos dias da localização escolhida.
+- [x] Como o clima não é algo que muda tão frequentemente, não é necessário requisitar o clima constantemente, sendo assim podemos economizar os dados móveis, utilize cache para resolver este problema.
+- [x] A aplicação deve funcionar em modo Retrato e Paisagem

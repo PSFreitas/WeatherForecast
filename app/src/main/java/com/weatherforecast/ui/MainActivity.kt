@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
     private val forecastAdapter = ForecastAdapter(mutableListOf())
 
     private val weatherViewModel by lazy {
-        val weatherRepository = WeatherRepositoryImplementation()
+        val weatherRepository = WeatherRepositoryImplementation(
+            this
+        )
         ViewModelProvider(
             this,
             WeatherViewModelFactory(weatherRepository)
@@ -38,18 +40,19 @@ class MainActivity : AppCompatActivity() {
             it.viewModel = weatherViewModel
             it.root
         }
-    }
 
-
-    override fun onResume() {
-        super.onResume()
+        fetchCurrenAndForecastWeather()
         setupRecyclerView()
         setupObservers()
+    }
+
+    private fun fetchCurrenAndForecastWeather() {
         weatherViewModel.getCurrentAndForecastWeather(
             -3.0445758,
             -60.002123113
         )
     }
+
 
     private fun setupObservers() {
         weatherViewModel.cityWeather.observe(
@@ -86,7 +89,8 @@ class MainActivity : AppCompatActivity() {
                 RecyclerView.VERTICAL,
                 false
             )
-            addItemDecoration(itemDecoration)
+            if (itemDecorationCount == 0)
+                addItemDecoration(itemDecoration)
             adapter = forecastAdapter
         }
 
