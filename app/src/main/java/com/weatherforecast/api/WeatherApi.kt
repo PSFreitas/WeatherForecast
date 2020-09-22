@@ -7,7 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class WeatherApi(
-    val context: Context
+     context: Context
 ) {
 
     val WEATHER_URL = "https://api.openweathermap.org/data/2.5/"

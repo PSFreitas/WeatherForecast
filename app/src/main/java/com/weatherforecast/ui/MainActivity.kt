@@ -88,7 +88,8 @@ class MainActivity : AppCompatActivity() {
                 RecyclerView.VERTICAL,
                 false
             )
-            addItemDecoration(itemDecoration)
+            if (itemDecorationCount == 0)
+                addItemDecoration(itemDecoration)
             adapter = forecastAdapter
         }
 
