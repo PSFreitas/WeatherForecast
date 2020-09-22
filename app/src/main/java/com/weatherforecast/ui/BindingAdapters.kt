@@ -20,9 +20,11 @@ class BindingAdapters {
         @JvmStatic
         @BindingAdapter("formatTimeInMillis")
         fun formatTimeInMillisToCalendar(textView: TextView, timeInMillis: Long) {
-            val calendar = Calendar.getInstance().apply { this.timeInMillis = timeInMillis }
-            val formatter = SimpleDateFormat("dd/MM/YYYY")
-            textView.text = formatter.format(calendar.time)
+            val calendar = Calendar.getInstance().apply {
+                this.timeInMillis = timeInMillis * 1000
+            }
+            val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy")
+            textView.text = simpleDateFormat.format(calendar.time)
         }
 
         @JvmStatic

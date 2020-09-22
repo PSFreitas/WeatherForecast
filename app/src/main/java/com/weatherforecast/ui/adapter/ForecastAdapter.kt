@@ -9,7 +9,7 @@ import com.weatherforecast.api.dto.ForecastWeather
 import com.weatherforecast.databinding.ItemWeatherForecastBinding
 
 class ForecastAdapter(
-    val forecastWeatherList: List<ForecastWeather>
+    val forecastWeatherList: MutableList<ForecastWeather>
 ) : RecyclerView.Adapter<
         ForecastAdapter.ForecastViewHolder>() {
 
